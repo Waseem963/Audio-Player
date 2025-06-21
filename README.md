@@ -45,7 +45,18 @@ assets/icons/Default.png
 ---
 
 ##  Project Structure
-<pre> ```bash project/ ├── main.py # App entry point ├── player.kv # UI layout (Kivy language) ├── main_screen.py # Main screen logic ├── logic/ │ ├── audio_player.py # Core audio control │ └── file_loader.py # File discovery logic ├── assets/ │ ├── music/ # Put your audio files here │ └── icons/ # Put your song images here └── README.md ``` </pre>
+<pre> ```project/
+├── main.py # App entry point
+├── player.kv # UI layout (Kivy language)
+├── main_screen.py # Main screen logic
+├── logic/
+│ ├── audio_player.py # Core audio control
+│ └── file_loader.py # File discovery logic
+├── assets/
+│ ├── music/ # Put your audio files here
+│ └── icons/ # Put your song images here
+└── README.md
+ ``` </pre>
 
 
 
