@@ -14,7 +14,7 @@ Place your `.mp3`, `.wav`, or `.ogg` files in:
 assets/music/
 
 
-### 🖼️ Cover Images (Optional)
+###  Cover Images (Optional)
 You can display a custom image for each song by placing an image in:
 assets/icons/
 
