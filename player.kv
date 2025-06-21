@@ -1,0 +1,216 @@
+#:kivy 2.3.1
+
+<MainScreen>:
+    name: "MainScreen"
+
+    BoxLayout:
+        orientation: 'vertical'
+        padding: [20, 20, 20, 20]
+        spacing: 20
+
+
+        
+        Image:
+            id: music_image
+            source: ""
+            size_hint_y: None
+            height: "200dp"
+            allow_stretch: True
+            keep_ratio: True
+            opacity: 0
+
+
+        Label:
+            id: song_label
+            text: ""
+            font_size: 22
+            size_hint_y: None
+            height: "220dp"
+            halign: "center"
+            valign: "middle"
+            color: 0.2, 0.2, 0.2, 1
+
+
+        BoxLayout:
+            orientation: 'horizontal'
+            spacing: 30
+            size_hint_y: None
+            height: "80dp"
+
+            BoxLayout:
+                orientation: 'vertical'
+                size_hint_x: 8
+                spacing: 10
+
+                Label:
+                    text: "Progress"
+                    size_hint_y: None
+                    height: "20dp"
+                    font_size: 14
+                    color: 0.3, 0.3, 0.3, 1
+
+                Slider:
+                    id: progress_bar
+                    min: 0
+                    max: 100
+                    value: 0
+                    size_hint_y: None
+                    height: "30dp"
+                    on_touch_up: root.seek_music(self.value)
+                    background_width: 8
+                    cursor_size: (20, 20)
+                    value_track: True
+                    value_track_color: 0, 0.7, 1, 1
+
+            BoxLayout:
+                orientation: 'vertical'
+                size_hint_x: 1
+                spacing: 10
+                padding: [0, 10, 0, 10]
+
+                Label:
+                    text: "Volume"
+                    size_hint_y: None
+                    height: "20dp"
+                    font_size: 14
+                    color: 0.3, 0.3, 0.3, 1
+
+                Slider:
+                    id: volume_slider
+                    orientation: 'vertical'
+                    min: 0
+                    max: 100
+                    value: 50
+                    size_hint: (1, None)
+                    height: "220dp"           # Increased height for a bigger slider
+                    background_width: 12      # Thicker track
+                    cursor_size: (28, 28)     # Bigger handle
+                    value_track: True
+                    value_track_color: 1, 0.5, 0, 1
+                    on_value: root.update_volume(self.value)
+
+        BoxLayout:
+            orientation: 'horizontal'
+            size_hint_y: None
+            height: "60dp"
+            spacing: 30
+            padding: [0, 10, 0, 0]
+
+            
+            # Previous Button
+
+            Button:
+                id: previous_button
+                allow_stretch: True
+                keep_ratio: True
+                background_color: 0, 0, 0, 0
+                on_press: root.previous_music()
+                on_release: 
+                    previous_Image_button.source = 'assets/icons/layout_images/button_images/ButtonPrevious.png'
+                text: ""
+
+
+                Image:
+                    id: previous_Image_button
+                    source:'assets/icons/layout_images/button_images/ButtonPrevious.png'
+                    center_x: self.parent.center_x
+                    center_y:self.parent.center_y
+                    allow_stretch: True
+                    keep_ratio: True
+                    size_hint: None, None
+                    size: "170dp", "200dp"    
+
+
+            # Play Button
+
+            Button:
+                id: play_button
+                allow_stretch: True
+                keep_ratio: True
+                background_color: 0, 0, 0, 0
+                on_press: root.play_music()
+                on_release: 
+                    play_Image_button.source = 'assets/icons/layout_images/button_images/ButtonPlay.png'
+                text: ""
+
+
+                Image:
+                    id: play_Image_button
+                    source:'assets/icons/layout_images/button_images/ButtonPlay.png'
+                    center_x: self.parent.center_x
+                    center_y:self.parent.center_y
+                    allow_stretch: True
+                    keep_ratio: True
+                    size_hint: None, None
+                    size: "170dp", "200dp"
+                    
+
+            # Pause Button
+            Button:
+                id: pause_button
+                allow_stretch: True
+                keep_ratio: True
+                background_color: 0, 0, 0, 0
+                on_press: root.pause_music()
+                text: ""
+
+
+                Image:
+                    id: pause_Image_button
+                    source:'assets/icons/layout_images/button_images/ButtonPause.png'
+                    center_x: self.parent.center_x
+                    center_y:self.parent.center_y
+                    allow_stretch: True
+                    keep_ratio: True
+                    size_hint: None, None
+                    size: "170dp", "200dp"
+
+
+
+
+            # Stop Button
+
+            Button:
+                id: stop_button
+                allow_stretch: True
+                keep_ratio: True
+                background_color: 0, 0, 0, 0
+                on_press: root.stop_music()
+                on_release: 
+                    stop_Image_button.source = 'assets/icons/layout_images/button_images/ButtonStop.png'
+                text: ""
+
+
+                Image:
+                    id: stop_Image_button
+                    source:'assets/icons/layout_images/button_images/ButtonStop.png'
+                    center_x: self.parent.center_x
+                    center_y:self.parent.center_y
+                    allow_stretch: True
+                    keep_ratio: True
+                    size_hint: None, None
+                    size: "170dp", "200dp"
+
+
+            # Next Button 
+
+            Button:
+                id: next_button
+                allow_stretch: True
+                keep_ratio: True
+                background_color: 0, 0, 0, 0
+                on_press: root.next_music()
+                on_release: 
+                    next_Image_button.source = 'assets/icons/layout_images/button_images/ButtonNext.png'
+                text: ""
+
+
+                Image:
+                    id: next_Image_button
+                    source:'assets/icons/layout_images/button_images/ButtonNext.png'
+                    center_x: self.parent.center_x
+                    center_y:self.parent.center_y
+                    allow_stretch: True
+                    keep_ratio: True
+                    size_hint: None, None
+                    size: "170dp", "200dp"
