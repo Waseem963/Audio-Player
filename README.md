@@ -45,7 +45,7 @@ assets/icons/Default.png
 ---
 
 ##  Project Structure
-<pre> project/
+<pre>project/
 ├── main.py # App entry point
 ├── player.kv # UI layout (Kivy language)
 ├── main_screen.py # Main screen logic
