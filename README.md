@@ -45,7 +45,7 @@ assets/icons/Default.png
 ---
 
 ##  Project Structure
-<pre> ```project/
+<pre> project/
 ├── main.py # App entry point
 ├── player.kv # UI layout (Kivy language)
 ├── main_screen.py # Main screen logic
@@ -56,7 +56,7 @@ assets/icons/Default.png
 │ ├── music/ # Put your audio files here
 │ └── icons/ # Put your song images here
 └── README.md
- ``` </pre>
+ </pre>
 
 
 
